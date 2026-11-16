@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#18252a" />
+<title>Codex Quest — The Old Kingdom Road</title>
+<link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <div class="eyebrow">A playable learning adventure</div>
+      <h1>Codex Quest <span class="title-star">✦</span></h1>
+      <div class="sub">The Mage's Trial · Forest road to the mountain pass</div>
+    </div>
+    <div class="pill">Side-scrolling RPG · Demo</div>
+  </header>
+
+  <section class="hud" aria-label="Journey status">
+    <div class="stat"><div class="k">Health</div><div class="v" id="hp">100 / 100</div><div class="track"><div class="fill hpfill" id="hpBar" style="width:100%"></div></div></div>
+    <div class="stat"><div class="k">Mastery XP</div><div class="v" id="xp">0 XP</div><div class="track"><div class="fill xpfill" id="xpBar" style="width:0%"></div></div></div>
+    <div class="stat"><div class="k">Encounters</div><div class="v" id="killed">0 / 9</div><div class="track"><div class="fill progressfill" id="mobBar" style="width:0%"></div></div></div>
+    <div class="stat spellbook"><div class="k">Spellbook</div><div class="v" id="skill">Apprentice Mage</div><div class="sub" id="levelCaption">Promptcraft · Deflection · Inspection</div></div>
+  </section>
+
+  <section class="gameframe">
+    <div class="framebar">
+      <div><strong>🗺️ The Old Kingdom Road</strong><div class="caption">Walk east to cross the realm. The view follows your journey.</div></div>
+      <div class="minitag" id="mapStatus">Whispering Forest</div>
+    </div>
+    <div class="canvaswrap" id="gameStage"><canvas id="world" width="960" height="540" aria-label="Side-scrolling pixel-art RPG scene showing a mage walking from a forest toward mountains"></canvas></div>
+    <div class="gamefoot">
+      <div class="controls"><span class="control-hint">Move</span><kbd>←</kbd><kbd>→</kbd><span>or</span><kbd>A</kbd><kbd>D</kbd></div>
+      <div class="touch-controls" aria-label="Touch movement controls"><button data-move="a" aria-label="Walk left">◀</button><button data-move="d" aria-label="Walk right">▶</button></div>
+      <div class="legend"><span><i class="dot normal-dot"></i>Creature</span><span><i class="dot elite-dot"></i>Elite</span><span><i class="dot boss-dot"></i>Dragon</span></div>
+    </div>
+  </section>
+
+  <div id="panelDock"><section class="frame right" id="panel" aria-live="polite"></section></div>
+  <div class="notice">This offline demo uses authored questions and structural checks for the final TypeScript dragon challenge. It does not execute submitted code, connect to Codex, or send content anywhere.</div>
+</main>
+<script type="module" src="./src/game.js"></script>
+</body>
+</html>
